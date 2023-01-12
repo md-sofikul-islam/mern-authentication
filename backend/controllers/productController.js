@@ -2,7 +2,7 @@ const Product = require('../models/productModel');
 const ErrorHandler = require('../utils/errorHandler');
 const apiFeatures = require("../utils/apiFeatures")
 exports.getAllProducts = async (req, res, next) => {
-    const resultPerPage = 5;
+    const resultPerPage = 3;
     try {
         const apiFeature = new apiFeatures(Product.find(),req.query).search().filter().pagination(resultPerPage);
         const products = await apiFeature.query;

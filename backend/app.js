@@ -1,16 +1,30 @@
 const express = require('express');
 const app = express();
+// EIGHT //
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
 //==========import middleware ===
 const errorMiddleware = require("./middleWare/error")
 //======= USE EXPRESS JSON=====//
 app.use(express.json());
 
+// NINE //
+app.use(cookieParser());
+app.use(bodyParser.urlencoded({ extended: true }));
 
-const productRoutes = require("./routes/productRoute")
-//========ALL ROUTES HERE=======//
+const productRoutes = require("./routes/productRoute");
+const userRoutes = require('./routes/userRoute');
+
+
+
+
+
+
 
 //======product routes=====//
 app.use("/api/v1",productRoutes)
+//============= user routes========//
+app.use("/api/v1",userRoutes)
 
 
 //============ middleware ====//
