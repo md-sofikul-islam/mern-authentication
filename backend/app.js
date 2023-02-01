@@ -12,7 +12,6 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const productRoutes = require("./routes/productRoute");
 const userRoutes = require('./routes/userRoute');
 
 
@@ -21,8 +20,6 @@ const userRoutes = require('./routes/userRoute');
 
 
 
-//======product routes=====//
-app.use("/api/v1",productRoutes)
 //============= user routes========//
 app.use("/api/v1",userRoutes)
 

@@ -3,7 +3,7 @@ const  User = require('../models/userModel');
 const ErrorHandler = require('../utils/errorHandler');
 const sendToken = require('../utils/JWTtoken')
 
-
+// >- first //
 //==========Register a User ======//
 
 exports.registerUser= catchAsyncError( async (req,res,next) =>{
